@@ -3,15 +3,14 @@
 
 const inputItem = document.getElementById('inputArea');
 
-function additem(){
-    if(inputItem.value == ""){
+function additem() {
+    if (inputItem.value == "") {
         document.getElementById('outPut').innerText = "Please enter a valid item name !!";
         document.getElementById('outPut').style.color = "red";
 
-    
+
     }
-    else{
-        document.getElementById('outPut').innerText = "Your Item has been Added";
+    else {
         document.getElementById('outPut').style.color = "green";
         document.getElementById('outlist').style.display = "block";
 
@@ -20,15 +19,19 @@ function additem(){
         newItem.innerText = inputItem.value;
         listItem.appendChild(newItem);
 
-        
+
         const delButton = document.createElement('i');
         delButton.setAttribute(`class`, `fa-solid fa-trash-can`);
         newItem.appendChild(delButton);
-        
+
+
         delButton.addEventListener('click', deletedItem);
 
-        function deletedItem(){
+
+        function deletedItem() {
             newItem.parentNode.removeChild(newItem);
+            document.getElementById('outPut').innerText = `Your 1 Item has been Removed.!`;
+            document.getElementById('outPut').style.color = "red";
         }
 
         const modifyButton = document.createElement('i');
@@ -37,14 +40,16 @@ function additem(){
 
         modifyButton.addEventListener('click', modifyItem);
 
-        function modifyItem(){
-            console.log('modify item button clicked');
+        function modifyItem() {
             inputItem.value = newItem.innerText;
             newItem.parentNode.removeChild(newItem);
         }
 
+        const totalList = document.getElementsByTagName('li');
+        const allitem = totalList.length;
+
+        document.getElementById('outPut').innerText = `Your ${allitem} Item has been Added .!!`;
 
         inputItem.value = "";
     }
 }
-
