@@ -9,6 +9,8 @@ const inputItem = document.getElementById('inputArea');
 function additem(){
     if(inputItem.value == ""){
         document.getElementById('outPut').innerText = "Please enter a valid item name !!";
+        document.getElementById('outPut').style.color = "red"
+
     
     }
     else{
@@ -21,6 +23,31 @@ function additem(){
         newItem.innerText = inputItem.value;
         listItem.appendChild(newItem);
 
+        
+        const delButton = document.createElement('i');
+        delButton.setAttribute(`class`, `fa-solid fa-trash-can`);
+        newItem.appendChild(delButton);
+        
+        delButton.addEventListener('click', deletedItem);
+
+        function deletedItem(){
+            newItem.parentNode.removeChild(newItem);
+        }
+
+        const modifyButton = document.createElement('i');
+        modifyButton.setAttribute(`class`, `fa-solid fa-pen-to-square`);
+        newItem.appendChild(modifyButton);
+
+        modifyButton.addEventListener('click', modifyItem);
+
+        function modifyItem(){
+            console.log('modify item button clicked')
+            
+
+        }
+
+
         inputItem.value = "";
     }
 }
+
