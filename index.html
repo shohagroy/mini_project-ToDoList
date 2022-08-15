@@ -23,7 +23,7 @@
     }
 
     main {
-      height: 100vh;
+      height: 80vh;
       width: 100%;
       background-color: #f1f5f8;
       display: flex;
@@ -31,7 +31,7 @@
       padding-top: 200px;
     }
     .main_continaer {
-      height: 40vh;
+      height: 50vh;
       width: 50%;
       background-color: #ffffff;
       border-radius: 20px;
@@ -88,7 +88,6 @@
     }
 
     .output_continer {
-      /* height: 300px; */
       width: 100%;
       margin-top: 100px;
       background-color: #ffffff;
@@ -122,8 +121,60 @@
     .fa-pen-to-square {
       color: green;
     }
+    header {
+      height: 10vh;
+      width: 100%;
+      background-color: #a5d5f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .followers {
+      color: rgb(79, 79, 79);
+      font-size: 30px;
+      margin: 10px;
+      transition: all 0.4s;
+    }
+    .followers:hover {
+      font-size: 50px;
+      color: red;
+    }
+
+    @media screen and (max-width: 786px) {
+      main {
+        padding-top: 50px;
+      }
+      .main_continaer {
+        width: 100%;
+        margin: 20px;
+        height: 350px;
+      }
+    }
   </style>
   <body>
+    <header>
+      <a
+        href="https://www.facebook.com/shohagroy.7771/"
+        class="followers"
+        target="_blank"
+        ><i class="fa-brands fa-facebook"></i
+      ></a>
+      <a
+        href="https://www.instagram.com/shohagroy.7771/"
+        class="followers"
+        target="_blank"
+        ><i class="fa-brands fa-square-instagram"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/shohag-roy-850a82236/"
+        class="followers"
+        target="_blank"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+      <a href="https://github.com/shohagroy" class="followers" target="_blank"
+        ><i class="fa-brands fa-square-github"></i
+      ></a>
+    </header>
     <main>
       <div class="main_continaer">
         <p id="outPut"></p>
