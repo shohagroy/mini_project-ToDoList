@@ -3,20 +3,17 @@
 
 const inputItem = document.getElementById('inputArea');
 
-
-
-
 function additem(){
     if(inputItem.value == ""){
         document.getElementById('outPut').innerText = "Please enter a valid item name !!";
-        document.getElementById('outPut').style.color = "red"
+        document.getElementById('outPut').style.color = "red";
 
     
     }
     else{
         document.getElementById('outPut').innerText = "Your Item has been Added";
-        document.getElementById('outPut').style.color = "green"
-        document.getElementById('outlist').style.display = "block"
+        document.getElementById('outPut').style.color = "green";
+        document.getElementById('outlist').style.display = "block";
 
         const listItem = document.getElementById('olList');
         const newItem = document.createElement('li');
@@ -41,9 +38,9 @@ function additem(){
         modifyButton.addEventListener('click', modifyItem);
 
         function modifyItem(){
-            console.log('modify item button clicked')
-            
-
+            console.log('modify item button clicked');
+            inputItem.value = newItem.innerText;
+            newItem.parentNode.removeChild(newItem);
         }
 
 
