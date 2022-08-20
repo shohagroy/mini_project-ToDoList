@@ -39,13 +39,17 @@
       margin-bottom: 50px;
     }
 
-    #outPut {
+    .output-massage {
       font-size: 20px;
       text-align: center;
       margin: 10px;
       color: red;
       font-family: "Courier New", Courier, monospace;
       font-weight: bold;
+    }
+
+    #del_massage {
+      display: none;
     }
     .main_continaer h2 {
       text-align: center;
@@ -177,7 +181,10 @@
     </header>
     <main>
       <div class="main_continaer">
-        <p id="outPut"></p>
+        <p id="outPut" class="output-massage"></p>
+        <p class="output-massage" id="del_massage">
+          Your <span id="del-item">0</span> Item has been Removed.!
+        </p>
         <h2>Mini Project - Todo List</h2>
         <div class="input_continer">
           <input type="text" id="inputArea" placeholder="e.g. item" />

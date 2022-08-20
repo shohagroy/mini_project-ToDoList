@@ -30,8 +30,18 @@ function additem() {
 
         function deletedItem() {
             newItem.parentNode.removeChild(newItem);
-            document.getElementById('outPut').innerText = `Your 1 Item has been Removed.!`;
+            document.getElementById('del_massage').style.display ="block"
+            const delQuentaty = document.getElementById('del-item');
+            const delQuentatyString = delQuentaty.innerText;
+            const delNumber = parseInt(delQuentatyString);
+
+            
+            delQuentaty.innerText = delNumber + 1;
+
+            // document.getElementById('outPut').innerText = `Your 1 Item has been Removed.!`;
             document.getElementById('outPut').style.color = "red";
+
+            // document.getElementById('outPut').style.display = "none";
         }
 
         const modifyButton = document.createElement('i');
@@ -47,6 +57,9 @@ function additem() {
 
         const totalList = document.getElementsByTagName('li');
         const allitem = totalList.length;
+
+
+        document.getElementById('outPut').style.display = "block";
 
         document.getElementById('outPut').innerText = `Your ${allitem} Item has been Added .!!`;
 
